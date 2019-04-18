@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "800625196201",
+    "firebase_url": "https://qrbox-49a41.firebaseio.com",
+    "project_id": "qrbox-49a41",
+    "storage_bucket": "qrbox-49a41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800625196201:android:bb805c7412bb1ddc",
+        "android_client_info": {
+          "package_name": "com.yazilim.firat.qrbox"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800625196201-vkmt0ci3089mr0847s4173r8ujv3cdnv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKQHlaClc-T4L9JXZ9OmRSUE0aaQ3cnX8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">QRBox</string>
+    <string name="prompt_email">E-Posta</string>
+    <string name="prompt_password">Parola</string>
+    <string name="action_sign_in">Üye Ol Veya Giriş Yap</string>
+    <string name="action_sign_in_short">Giriş Yap</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="desc">Loading Logo</string>
+    <string name="login">Login</string>
+    <string name="verification">Verification</string>
+    <string name="signup">Sign Up</string>
+    <string name="kayıtol">Kayıt Ol</string>
+
+    <string name="title_activity_signup">activity_signup</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_mail_verification">mail_verification</string>
+</resources>
