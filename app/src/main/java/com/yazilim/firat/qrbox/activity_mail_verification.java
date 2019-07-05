@@ -56,7 +56,13 @@ public class activity_mail_verification extends AppCompatActivity {
     Context context = null;
     String rec, subject, textMessage;
 
-    FirebaseDatabase db;
+    //////////  Firebase  ////////////
+
+    //FirebaseDatabase db;
+    FirebaseDatabase database;
+    DatabaseReference ref;
+
+    //////////////////////////////////
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +70,7 @@ public class activity_mail_verification extends AppCompatActivity {
         setContentView(R.layout.activity_mail_verification);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        db = FirebaseDatabase.getInstance();
+        //db = FirebaseDatabase.getInstance();
 
         Intent myIntent = getIntent();
         final String ogrenci_no = myIntent.getStringExtra("ogrenci_noText");
@@ -76,10 +82,10 @@ public class activity_mail_verification extends AppCompatActivity {
         /*textView2 = (TextView) findViewById(R.id.dogrulama_text);
         textView2.setText(ogrenci_mail);
         */
+
         //Mail Gönderme
 
         context = this;
-
         rec = ogrenci_mail;
         subject = "QR Code Onay Şifresi";
         textMessage = "Mail İçeriği Onay Kodu : " + dogrulama_kodu;
@@ -138,19 +144,26 @@ public class activity_mail_verification extends AppCompatActivity {
         verification_code = (EditText)findViewById(R.id.verification_code);
         verification_button = (Button) findViewById(R.id.verification_button);
 
+        database = FirebaseDatabase.getInstance();
 
         verification_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-
                 if ((verification_code.getText().toString()).equals(dogrulama_kodu)){
 
+                    /*
                     DatabaseReference dbRef = db.getReference("kullanicilar");
                     String key = dbRef.push().getKey();
                     DatabaseReference dbRefKeyli = db.getReference("kullanicilar/"+key);
-
                     dbRefKeyli.setValue(new Kullanici(ogrenci_no,ogrenci_mail,parola));
+                    */
+
+                    //kullanici.getMail().setValue(new Kullanici(ogrenci_no,ogrenci_mail,parola));
+
+                    ref = database.getReference().child("kullanicilar");
+                    ref.child("firat"+ogrenci_no).setValue(new Kullanici(ogrenci_no,ogrenci_mail,parola));
+
 
                     AlertDialog.Builder builder = new AlertDialog.Builder(activity_mail_verification.this);
                     builder.setTitle("QR Box");
@@ -163,7 +176,6 @@ public class activity_mail_verification extends AppCompatActivity {
                         }
                     });
                     builder.show();
-
 
                 }
                 else{
@@ -179,11 +191,8 @@ public class activity_mail_verification extends AppCompatActivity {
                     });
                     builder.show();
                 }
-
             }
         });
-
-
     }
 
     class RetreiveFeedTask extends AsyncTask<String,Void,String>{
@@ -196,7 +205,6 @@ public class activity_mail_verification extends AppCompatActivity {
                 message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
                 message.setSubject(subject);
                 message.setContent(textMessage,"text/html; charset=utf-8");
-
                 Transport.send(message);
             }
             catch (MessagingException e){

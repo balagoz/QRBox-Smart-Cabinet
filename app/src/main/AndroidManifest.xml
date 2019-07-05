@@ -8,8 +8,8 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -27,14 +27,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".login" />
         <activity
             android:name=".activity_signup"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_signup"
             android:theme="@style/FullscreenTheme" />
         <activity android:name=".activity_mail_verification" />
-        <activity android:name=".activity_sifremiUnuttum"></activity>
+        <activity android:name=".activity_sifremiUnuttum" />
+        <activity android:name=".activity_homepage" />
+        <activity android:name=".activity_scancode" />
+        <activity android:name=".activity_info"></activity>
     </application>
 
 </manifest>

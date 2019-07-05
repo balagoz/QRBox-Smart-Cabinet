@@ -58,18 +58,19 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Öğrenci Numarası"
+                            android:text="Öğrenci Mail Adresi"
                             android:textAllCaps="true"
                             android:textSize="15sp"
                             android:textColor="@color/white"/>
                         
                         <EditText
+                            android:id="@+id/giris_mail"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:background="@drawable/et_bg"
+                            android:text="15290052@firat.edu.tr"
                             android:textSize="15sp"
                             android:textColor="@color/white"
-                            android:inputType="number"
                             android:paddingLeft="15dp"
                             android:paddingRight="15dp"
                             android:layout_marginTop="5dp"/>
@@ -91,9 +92,11 @@
                             android:textSize="15sp" />
 
                         <EditText
+                            android:id="@+id/giris_parola"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
                             android:layout_marginTop="5dp"
+                            android:text="asddasdd"
                             android:background="@drawable/et_bg"
                             android:inputType="textPassword"
                             android:paddingLeft="15dp"
@@ -106,6 +109,7 @@
                 </LinearLayout>
 
                 <Button
+                    android:id="@+id/button_girisYap"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_below="@id/linlay1"

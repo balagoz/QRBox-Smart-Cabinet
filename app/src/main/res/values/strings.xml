@@ -13,6 +13,9 @@
     </string>
     <string name="desc">Loading Logo</string>
     <string name="login">Login</string>
+    <string name="homepage">Anasayfa</string>
+    <string name="welcome">Hoş Geldin</string>
+    <string name="qrbox">QRBox Uygulaması</string>
     <string name="verification">Verification</string>
     <string name="signup">Sign Up</string>
     <string name="kayıtol">Kayıt Ol</string>
